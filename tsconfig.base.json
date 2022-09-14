@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@myorg/recipe-data": ["libs/recipe-data/src/index.ts"],
+      "my-api-data": ["libs/data/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

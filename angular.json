@@ -2,7 +2,9 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "data": "libs/data",
     "recipe-app": "apps/recipe-app",
-    "recipe-app-e2e": "apps/recipe-app-e2e"
+    "recipe-app-e2e": "apps/recipe-app-e2e",
+    "recipe-data": "libs/recipe-data"
   }
 }
