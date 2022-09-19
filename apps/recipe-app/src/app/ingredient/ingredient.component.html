@@ -1,3 +1,10 @@
-<p>ingredient works!</p>
+<div [attr.data-test-id]="test" #ingredient>
+  <p>ingredient works!</p>
 
-<pre>{{ data$ | async | json }}</pre>
+  <pre>{{ data$ | async | json }}</pre>
+
+  <div *ngFor="let item of list;index as i; first as isFirst; last as isLast; even as isEven;trackBy: trackByItem">
+    <span>{{item}} - {{i}} -{{isFirst}} - {{isLast}} - {{isEven}}</span>
+  </div>
+  <button (click)="sendElement(ingredient)">Get Root</button>
+</div>

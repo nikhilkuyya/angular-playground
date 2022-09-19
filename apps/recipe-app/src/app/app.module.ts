@@ -6,9 +6,14 @@ import { CoreModule } from './core/core.module';
 import { DataModule } from 'my-api-data';
 import { IngredientModule } from './ingredient/ingredient.module';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
+import { PokemonAbilitiesComponent } from './pokemon-abilities/pokemon-abilities.component';
 
 @NgModule({
-  declarations: [AppComponent, ImageUploaderComponent],
+  declarations: [
+    AppComponent,
+    ImageUploaderComponent,
+    PokemonAbilitiesComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
