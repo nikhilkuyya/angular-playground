@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FruitsListModel } from './shared';
+import { FruitsModel, VegetablesModel } from './shared';
 
 @Component({
   selector: 'myorg-root',
@@ -8,7 +8,7 @@ import { FruitsListModel } from './shared';
 })
 export class AppComponent {
   title = 'pokemon-app';
-  fruits: FruitsListModel = [
+  fruits: FruitsModel = [
     {
       id: 1,
       name: 'Apple',
@@ -21,7 +21,7 @@ export class AppComponent {
     },
   ];
 
-  vegetables: FruitsListModel = [
+  vegetables: VegetablesModel = [
     {
       id: 1,
       name: 'Carrot',
