@@ -1,7 +1,7 @@
 <p>select-fruits works!</p>
 <pre>{{ fruits | json }}</pre>
 <ng-container *ngIf="fruits">
-  <ul (change)="checkHandler($event,fruits,'fruits')">
+  <!-- <ul (change)="checkHandler($event,fruits,'fruits')">
     <li *ngIf="fruits && fruits.length > 0">
       <p>
         <input type="checkbox" [checked]="isAllChecked(fruits)" [attr.data-item-id]="allValue" />
@@ -14,5 +14,30 @@
         {{fruit.name}}
       </p>
     </li>
-  </ul>
+  </ul> -->
+
+
+
+  <ng-container *ngTemplateOutlet="fruitsTemplate;context:fruitsContext "></ng-container>
+  <hr />
+  <hr />
+  <ng-container *ngTemplateOutlet="fruitsTemplate;context:vegetableContext"></ng-container>
+
 </ng-container>
+
+<ng-template #fruitsTemplate let-list="list" let-name="name">
+  <ul (change)="checkHandler($event,list,name)">
+    <li *ngIf="list && list.length > 0">
+      <p>
+        <input type="checkbox" [checked]="isAllChecked(list)" [attr.data-item-id]="allValue" />
+        All
+      </p>
+    </li>
+    <li *ngFor=" let item of list; trackBy: getUniqueFruitId">
+      <p>
+        <input type="checkbox" [checked]="item.checked" [attr.data-item-Id]="item.id" />
+        {{item.name}}
+      </p>
+    </li>
+  </ul>
+</ng-template>

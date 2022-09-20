@@ -1,6 +1,15 @@
+import { SelectorContext } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { FruitsListModel, FruitsModel } from '../shared';
 type ListModel = FruitsListModel;
+interface MySelectContext {
+  list: ListModel;
+  name: SelectContextTypes;
+}
+enum SelectContextTypes {
+  Fruit = 'fruit',
+  Vegetables = 'vegetables',
+}
 @Component({
   selector: 'myorg-select-fruits',
   templateUrl: './select-fruits.component.html',
@@ -8,10 +17,22 @@ type ListModel = FruitsListModel;
 })
 export class SelectFruitsComponent implements OnInit {
   @Input() fruits!: FruitsListModel;
+  @Input() vegetables!: FruitsListModel;
+  fruitsContext!: MySelectContext;
+  vegetableContext!: MySelectContext;
   allValue = 99;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.fruitsContext = {
+      list: this.fruits,
+      name: SelectContextTypes.Fruit,
+    };
+    this.vegetableContext = {
+      list: this.vegetables,
+      name: SelectContextTypes.Vegetables,
+    };
+  }
 
   isAllChecked(list: ListModel) {
     return list.length === list.filter((item) => item.checked).length;
@@ -38,8 +59,19 @@ export class SelectFruitsComponent implements OnInit {
           }
         });
       }
-      if (listName === 'fruits') {
+      if (listName === SelectContextTypes.Fruit) {
         this.fruits = updatedList;
+        this.fruitsContext = {
+          ...this.fruitsContext,
+          list: this.fruits,
+        };
+      }
+      if (listName === SelectContextTypes.Vegetables) {
+        this.vegetables = updatedList;
+        this.vegetableContext = {
+          ...this.vegetableContext,
+          list: this.vegetables,
+        };
       }
     }
   }

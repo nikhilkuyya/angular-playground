@@ -20,4 +20,17 @@ export class AppComponent {
       checked: false,
     },
   ];
+
+  vegetables: FruitsListModel = [
+    {
+      id: 1,
+      name: 'Carrot',
+      checked: false,
+    },
+    {
+      id: 2,
+      name: 'Cabbage',
+      checked: false,
+    },
+  ];
 }
