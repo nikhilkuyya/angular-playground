@@ -1,0 +1,18 @@
+<p>select-fruits works!</p>
+<pre>{{ fruits | json }}</pre>
+<ng-container *ngIf="fruits">
+  <ul (change)="checkHandler($event,fruits,'fruits')">
+    <li *ngIf="fruits && fruits.length > 0">
+      <p>
+        <input type="checkbox" [checked]="isAllChecked(fruits)" [attr.data-item-id]="allValue" />
+        All
+      </p>
+    </li>
+    <li *ngFor=" let fruit of fruits; trackBy: getUniqueFruitId">
+      <p>
+        <input type="checkbox" [checked]="fruit.checked" [attr.data-item-Id]="fruit.id" />
+        {{fruit.name}}
+      </p>
+    </li>
+  </ul>
+</ng-container>
