@@ -7,7 +7,7 @@ import { DataModule } from 'my-api-data';
 import { IngredientModule } from './ingredient/ingredient.module';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 import { PokemonAbilitiesComponent } from './pokemon-abilities/pokemon-abilities.component';
-import { SelectFruitsComponent } from './select-fruits/select-fruits.component';
+import { SelectNutritionComponent } from './select-nutrition/select-nutrition.component';
 import { SharedModule } from './shared/shared.module';
 import { CommonModule } from '@angular/common';
 
@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
     AppComponent,
     ImageUploaderComponent,
     PokemonAbilitiesComponent,
-    SelectFruitsComponent,
+    SelectNutritionComponent,
   ],
   imports: [
     BrowserModule,

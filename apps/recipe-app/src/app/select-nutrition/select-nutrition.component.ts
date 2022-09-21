@@ -10,11 +10,11 @@ import {
 } from '../shared';
 
 @Component({
-  selector: 'myorg-select-fruits',
-  templateUrl: './select-fruits.component.html',
-  styleUrls: ['./select-fruits.component.scss'],
+  selector: 'myorg-select-nutrition',
+  templateUrl: './select-nutrition.component.html',
+  styleUrls: ['./select-nutrition.component.scss'],
 })
-export class SelectFruitsComponent implements OnInit {
+export class SelectNutritionComponent implements OnInit {
   @Input() fruits!: FruitsModel;
   @Input() vegetables!: VegetablesModel;
   fruitType = NutritionTypes.Fruit;
